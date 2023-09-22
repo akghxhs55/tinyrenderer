@@ -1,0 +1,8 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 3.27)
+
+PROJECT(tinyrenderer)
+
+FILE( GLOB SRC *.cpp )
+FILE( GLOB HDR *.h )
+
+ADD_EXECUTABLE( tinyrenderer ${SRC} ${HDR} )
