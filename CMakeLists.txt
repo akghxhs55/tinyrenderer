@@ -1,8 +1,11 @@
-CMAKE_MINIMUM_REQUIRED(VERSION 3.27)
+cmake_minimum_required(VERSION 3.27)
 
-PROJECT(tinyrenderer)
+project(tinyrenderer)
 
-FILE( GLOB SRC *.cpp )
-FILE( GLOB HDR *.h )
+file( GLOB SRC src/*.cpp )
+file( GLOB HDR include/*.h )
 
-ADD_EXECUTABLE( tinyrenderer ${SRC} ${HDR} )
+add_compile_options( -std=c++17 )
+
+add_executable( tinyrenderer main.cpp ${SRC} ${HDR} )
+target_include_directories( tinyrenderer PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include/ )
